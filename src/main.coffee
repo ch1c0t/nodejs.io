@@ -8,3 +8,6 @@ global.IO =
   move: rename
   mkdir: mkdir
   exist: existsSync
+  ensure: (path) ->
+    unless existsSync path
+      mkdir path
