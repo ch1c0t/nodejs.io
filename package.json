@@ -6,7 +6,8 @@
   "description": "A global.IO in vein of Ruby's IO module.",
   "license": "0BSD",
   "scripts": {
-    "dev": "coffee --watch --compile --output lib src"
+    "build": "coffee --compile --output lib src",
+    "start": "coffee --watch --compile --output lib src"
   },
   "devDependencies": {
     "coffeescript": "^2.5.1"

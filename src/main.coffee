@@ -1,4 +1,4 @@
-{ readFile, writeFile, copyFile, rename, mkdir } = require('fs').promises
+{ readFile, writeFile, copyFile, rename, mkdir, chmod } = require('fs').promises
 { existsSync } = require 'fs'
 
 global.IO =
@@ -7,6 +7,7 @@ global.IO =
   copy: copyFile
   move: rename
   mkdir: mkdir
+  chmod: chmod
   exist: existsSync
   ensure: (path) ->
     unless existsSync path
