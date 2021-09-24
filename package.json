@@ -1,7 +1,7 @@
 {
   "name": "@ch1c0t/io",
   "main": "lib/main.js",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "author": "Anatoly Chernov <chertoly@gmail.com>",
   "description": "A global.IO in vein of Ruby's IO module.",
   "license": "0BSD",
