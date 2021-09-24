@@ -11,4 +11,4 @@ global.IO =
   exist: existsSync
   ensure: (path) ->
     unless existsSync path
-      mkdir path
+      mkdir path, recursive: yes
