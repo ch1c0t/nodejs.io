@@ -12,7 +12,7 @@ global.IO =
   ensure: (path) ->
     unless existsSync path
       mkdir path, recursive: yes
-  mkdir: (path) ->
+  mkdir_p: (path) ->
     unless existsSync path
       mkdirSync path, recursive: yes
   dirs: (dir) ->
