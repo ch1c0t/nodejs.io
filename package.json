@@ -10,6 +10,6 @@
     "start": "coffee --watch --compile --output lib src"
   },
   "devDependencies": {
-    "coffeescript": "^2.5.1"
+    "coffeescript": "^2.7.0"
   }
 }
