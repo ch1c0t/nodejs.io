@@ -7,9 +7,11 @@
   "license": "0BSD",
   "scripts": {
     "build": "coffee --compile --output lib src",
-    "start": "coffee --watch --compile --output lib src"
+    "start": "coffee --watch --compile --output lib src",
+    "test": "coffee scripts/run_specs.coffee"
   },
   "devDependencies": {
-    "coffeescript": "^2.7.0"
+    "coffeescript": "^2.7.0",
+    "jasmine": "^6.2.0"
   }
 }

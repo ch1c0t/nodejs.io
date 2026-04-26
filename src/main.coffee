@@ -1,22 +1,45 @@
-{ readFile, writeFile, copyFile, rename, mkdir, chmod } = require('fs').promises
-{ existsSync, readdirSync, mkdirSync } = require 'fs'
+{
+  readFile
+  writeFile
+  copyFile
+  rename
+  mkdir
+  stat
+  chmod
+} = require('fs').promises
+
+{
+  readFileSync
+  writeFileSync
+  copyFileSync
+  renameSync
+  mkdirSync
+  existsSync
+  chmodSync
+  readdirSync
+} = require 'fs'
 
 global.IO =
-  read: (path) -> readFile path, 'utf-8'
-  write: writeFile
-  copy: copyFile
-  move: rename
-  mkdir: mkdir
-  chmod: chmod
-  exist: existsSync
-  ensure: (path) ->
-    unless existsSync path
-      mkdir path, recursive: yes
-  mkdir_p: (path) ->
-    unless existsSync path
+  sync:
+    read: (path) ->
+      readFileSync path, 'utf-8'
+    write: writeFileSync
+    copy: copyFileSync
+    move: renameSync
+    mkdir: (path) ->
       mkdirSync path, recursive: yes
-  dirs: (dir) ->
-    readdirSync dir, withFileTypes: yes
-      .filter (dirent) -> dirent.isDirectory()
-      .map (dirent) -> "#{dir}/#{dirent.name}"
-      
+    exists: existsSync
+    dirs: (dir) ->
+      readdirSync dir, withFileTypes: yes
+        .filter (dirent) -> dirent.isDirectory()
+        .map (dirent) -> "#{dir}/#{dirent.name}"
+  async:
+    read: (path) ->
+      readFile path, 'utf-8'
+    write: writeFile
+    copy: copyFile
+    move: rename
+    mkdir: (path) ->
+      mkdir path, recursive: yes
+    stat: stat
+    chmod: chmod
